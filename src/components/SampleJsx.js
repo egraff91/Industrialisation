@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import { Image, ScrollView } from 'react-native';
+import { Image, ScrollView ,StyleSheet,View} from 'react-native';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+})
 
 export default class SampleJsx extends Component {
 
@@ -18,10 +26,12 @@ export default class SampleJsx extends Component {
     ];
 
     return (
-      <ScrollView horizontal>
+      <View style={styles.container}>
+      <ScrollView>
         {monComposant}
         {images}
       </ScrollView>
+      </View>
     );
   }
 }

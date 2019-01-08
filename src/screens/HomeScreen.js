@@ -8,10 +8,14 @@ import {
 
 import Info from '../components/Info';
 
-import { GREETINGS_SCENE_NAME } from '../screens/GreetingsScreen';
-import { JSX_SCENE_NAME } from '../screens/JsxScreen';
-import { STATE_SCENE_NAME } from '../screens/StateScreen';
-import { ANIMATION_SCENE_NAME } from '../screens/Animation';
+import { GREETINGS_SCENE_NAME } from './GreetingsScreen';
+import { JSX_SCENE_NAME } from './JsxScreen';
+import { STATE_SCENE_NAME } from './StateScreen';
+import { ANIMATION_SCENE_NAME } from './Animation';
+
+import Config from 'react-native-config';
+
+Config.API_URL
 
 export const HOME_SCENE_NAME = 'HOME_SCENE';
 
@@ -19,19 +23,9 @@ const styles = StyleSheet.create({
   margin: {
     marginTop: 10,
   },
-  button: {
-    flex: 1,
-    margin: 20,
-    backgroundColor: 'blue',
-    margin: 10,
-    textAlign: 'center',
-    fontSize: 20,
-    paddingTop: 70,
-  }
 });
 
 export default class HomeScreen extends Component {
-
   static navigationOptions = {
     title: 'Home',
   };
@@ -47,10 +41,6 @@ export default class HomeScreen extends Component {
     this.navigateToAnimation = this.navigateToAnimation.bind(this);
   }
 
-  navigateToAnimation() {
-    this.navigate(ANIMATION_SCENE_NAME);
-  }
-
   navigateToGreetings() {
     this.navigate(GREETINGS_SCENE_NAME);
   }
@@ -63,36 +53,40 @@ export default class HomeScreen extends Component {
     this.navigate(STATE_SCENE_NAME);
   }
 
+  navigateToAnimation() {
+    this.navigate(ANIMATION_SCENE_NAME);
+  }
+
   render() {
     return (
       <ScrollView>
         <Info />
         <View style={styles.margin}>
-          <Button style={styles.button}
+          <Button
             onPress={this.navigateToAnimation}
-            title="ANIMATION"
+            title="Animation"
           />
         </View>
+
         <View style={styles.margin}>
-          <Button style={styles.button}
+          <Button
             onPress={this.navigateToGreetings}
             title="Greetings"
           />
         </View>
 
         <View style={styles.margin}>
-          <Button style={styles.button}
+          <Button
             onPress={this.navigateToJsx}
             title="Jsx"
           />
         </View>
         <View style={styles.margin}>
-          <Button style={styles.button}
+          <Button
             onPress={this.navigateToState}
             title="State"
           />
         </View>
-      
       </ScrollView>
     );
   }

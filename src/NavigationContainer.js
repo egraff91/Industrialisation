@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { View } from 'react-native';
+import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
 import HomeScreen, { HOME_SCENE_NAME } from './screens/HomeScreen';
@@ -14,10 +13,6 @@ stackNavigatorConfig[HOME_SCENE_NAME] = {
   screen: HomeScreen,
 };
 
-stackNavigatorConfig[ANIMATION_SCENE_NAME] = {
-  screen: Animation,
-};
-
 stackNavigatorConfig[GREETINGS_SCENE_NAME] = {
   screen: GreetingsScreen,
 };
@@ -30,9 +25,12 @@ stackNavigatorConfig[STATE_SCENE_NAME] = {
   screen: StateScreen,
 };
 
+stackNavigatorConfig[ANIMATION_SCENE_NAME] = {
+  screen: Animation,
+};
+
 const ApplicationNavigator = StackNavigator(stackNavigatorConfig, {
   initialRouteName: HOME_SCENE_NAME,
 });
 
 export default () => <ApplicationNavigator />;
-

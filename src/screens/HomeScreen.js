@@ -13,6 +13,11 @@ import { JSX_SCENE_NAME } from '../screens/JsxScreen';
 import { STATE_SCENE_NAME } from '../screens/StateScreen';
 import { ANIMATION_SCENE_NAME } from '../screens/Animation';
 
+import Config from 'react-native-config'
+
+Config.API_URL  // 'https://myapi.com'
+Config.GOOGLE_MAPS_API_KEY  // 'abcdefgh'
+
 export const HOME_SCENE_NAME = 'HOME_SCENE';
 
 const styles = StyleSheet.create({
